@@ -17,46 +17,39 @@ class MyApp extends StatelessWidget {
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Row(
-              children: [
+         crossAxisAlignment: CrossAxisAlignment.center,
+         children: [
+           Padding(
+             padding: const EdgeInsets.all(8.0),
+             child: TextFormField(
+               keyboardType: TextInputType.phone,
+               cursorColor: Colors.red,
+               enabled: true,
+               style: TextStyle(fontSize: 14, color: Colors.green),
+               decoration: InputDecoration(
+                 prefixIcon: Icon(Icons.email),
+                 fillColor: Colors.green.withOpacity(.2),
+                 filled: true,
+                 hintText: 'Emal',
 
-              ],
-            ),
-            Center(
-              child: Center(
-                child: Container(
-                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: 50 ),
-                  height: 250,
-                  width: 250,
-
-
-                  decoration: BoxDecoration(
-                    color: Colors.orange,
-                    borderRadius: BorderRadius.circular(10),
-                    border: Border.all(
-                      color: Colors.red,
-                      width: 1,
-                    ),
-                   image: DecorationImage(
-                     image: NetworkImage('https://cdn.photographylife.com/wp-content/uploads/2018/11/Moeraki-Boulders-New-Zealand.jpg'),
-                   fit: BoxFit.cover
+                   hintStyle: TextStyle(
+                       fontSize: 14, color: Colors.red
                    ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.red,
-                        blurRadius: 100,
-                      )
-                    ]
-                  ),
+                 enabledBorder: OutlineInputBorder(
+                   borderSide: BorderSide(color: Colors.teal, width: 1),
+                 ),
+                 focusedBorder: OutlineInputBorder(
+                   borderSide: BorderSide(color: Colors.teal, width: 1,),
+                   borderRadius: BorderRadius.circular(10),
+                 ),
+               ),
+onChanged: (value){
+                 print(value);
+},
+             ),
+           ),
+         ],
 
-                  child: const Center(child: Text(' Login ', style: TextStyle(fontSize: 20),),
-                  ),
-                ),
-              ),
-            )
-          ],
         )
       ),
     );
